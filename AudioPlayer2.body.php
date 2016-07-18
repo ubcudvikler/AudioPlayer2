@@ -54,7 +54,7 @@ class AudioPlayer2 {
 
 		if (!in_array($mimetype, self::$handled_mimetypes)) {
 			// Display as page link if not applicable.
-			return Linker::makeKnownLinkObj($title);
+			return Linker::linkKnown($title);
 		}
 
 		$id = self::makeUniqueId();
@@ -71,7 +71,7 @@ class AudioPlayer2 {
 
 		self::addFile($image, $id, $file_title, $file_author);
 
-		return '<div id="'.$id.'">' . Linker::makeKnownLinkObj($title) . '</div>';
+		return '<div id="'.$id.'">' . Linker::linkKnown($title) . '</div>';
 	}
 	
 	/** Set the tags to handle (default: "player")
